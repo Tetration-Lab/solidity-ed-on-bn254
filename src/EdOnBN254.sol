@@ -87,7 +87,7 @@ library EdOnBN254 {
 
     function neg(Affine memory a) public pure returns (Affine memory) {
         if (a.x == 0 && a.y == 0) return a;
-        return Affine(Q - (a.x % Q), a.y);
+        return Affine(submod(0, a.x, Q), a.y);
     }
 
     function submod(
@@ -95,13 +95,7 @@ library EdOnBN254 {
         uint256 _b,
         uint256 _mod
     ) internal pure returns (uint256) {
-        uint256 aNN = _a;
-
-        if (_a <= _b) {
-            aNN += _mod;
-        }
-
-        return addmod(aNN - _b, 0, _mod);
+        return addmod(_a, _mod - _b, _mod);
     }
 
     function inverse(uint256 _a) internal view returns (uint256) {
