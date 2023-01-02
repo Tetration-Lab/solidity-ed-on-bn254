@@ -32,14 +32,14 @@ $$
 First, install this package as dependency.
 
 ```bash
-forge install https://github.com/Tetration-Lab/solidity_ed_on_bn254
+forge install https://github.com/Tetration-Lab/solidity-ed-on-bn254
 forge remappings
 ```
 
 Then use it in library or smart contract.
 
 ```solidity
-import {EdOnBN254} from "solidity_ed_on_bn254/EdOnBN254.sol";
+import {EdOnBN254} from "solidity-ed-on-bn254/EdOnBN254.sol";
 
 contract X {
  function x() public {
