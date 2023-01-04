@@ -35,6 +35,10 @@ library EdOnBN254 {
             );
     }
 
+    function zero() public pure returns (Affine memory) {
+        return Affine(0, 1);
+    }
+
     function add(
         Affine memory a1,
         Affine memory a2
